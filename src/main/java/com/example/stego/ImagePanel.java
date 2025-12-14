@@ -4,25 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-/**
- * Панель для отображения изображения с масштабированием "вписать".
- */
+
 public class ImagePanel extends JPanel {
     private BufferedImage image;
 
-    /**
-     * Создаёт панель с заголовком.
-     * @param title заголовок рамки
-     */
+
     public ImagePanel(String title) {
         setPreferredSize(new Dimension(520, 520));
         setBorder(BorderFactory.createTitledBorder(title));
     }
 
-    /**
-     * Устанавливает изображение для отображения.
-     * @param img изображение
-     */
+
     public void setImage(BufferedImage img) {
         this.image = img;
         repaint();
