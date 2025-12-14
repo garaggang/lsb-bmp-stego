@@ -7,9 +7,9 @@
 - встраивает сообщение в **младшие биты** каналов R/G/B (LSB / НЗБ);
 - показывает **оригинал** и **визуализацию младших битов** результата.
 
-Дополнительно (для максимальных баллов):
+Дополнительно:
 - логирование (Log4j2) в консоль и файл `logs/app.log`;
-- сборка Gradle + fat-jar (`shadowJar`);
+- сборка Gradle;
 - unit-тесты JUnit 5;
 - JavaDoc на основные классы/методы;
 - CLI-режим для запуска из консоли.
@@ -18,16 +18,10 @@
 Откройте проект в IntelliJ IDEA как Gradle-проект и запустите `com.example.stego.App`.
 
 ## Сборка JAR
-### Вариант 1 (рекомендуется): через IntelliJ
-Gradle tool window → Tasks → shadow → `shadowJar`
+Gradle tool window > Tasks > shadow > `shadowJar`
 
 Итоговый файл:
 `build/libs/lsb-bmp-stego-1.0.0-all.jar`
-
-### Вариант 2: через консоль (если Gradle установлен)
-```bash
-gradle clean test shadowJar
-```
 
 ## Запуск JAR (GUI)
 ```bash
