@@ -4,19 +4,11 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.zip.CRC32;
 
-/**
- * Формат данных, которые встраиваются в BMP:
- * [4 байта длина текста][4 байта CRC32 от текста][N байт текста в кодировке]
- */
+
 public final class Payload {
     private Payload() {}
 
-    /**
-     * Упаковывает строку в массив байт с длиной и CRC32.
-     * @param message текст
-     * @param charset кодировка
-     * @return payload
-     */
+
     public static byte[] pack(String message, Charset charset) {
         if (message == null) message = "";
         byte[] msgBytes = message.getBytes(charset);
@@ -32,12 +24,7 @@ public final class Payload {
         return bb.array();
     }
 
-    /**
-     * Распаковывает payload: проверяет CRC32 и возвращает строку.
-     * @param payload payload
-     * @param charset кодировка
-     * @return извлечённый текст
-     */
+
     public static String unpack(byte[] payload, Charset charset) {
         if (payload == null || payload.length < 8) {
             throw new IllegalArgumentException("Недостаточно данных для распаковки.");
