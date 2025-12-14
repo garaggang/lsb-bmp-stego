@@ -19,12 +19,7 @@ public final class LsbStego {
         return capacityBits / 8;
     }
 
-    /**
-     * Встраивает payload в копию изображения.
-     * @param src исходное изображение
-     * @param payload данные
-     * @return новое изображение со встроенными данными
-     */
+
     public static BufferedImage embed(BufferedImage src, byte[] payload) {
         int w = src.getWidth();
         int h = src.getHeight();
@@ -65,12 +60,7 @@ public final class LsbStego {
         return img;
     }
 
-    /**
-     * Извлекает payload из изображения.
-     * Формат payload задаётся классом {@link Payload}.
-     * @param img изображение
-     * @return payload (заголовок+данные)
-     */
+
     public static byte[] extract(BufferedImage img) {
         int w = img.getWidth();
         int h = img.getHeight();
